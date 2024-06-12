@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* #canvas {
+#canvas {
     display: none;
 }
 
@@ -15,7 +15,6 @@
     background: #222;
     margin-left: 200px;
     color: #fff;
-    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -52,4 +51,4 @@ button {
     width: 200px;
     font-size: 20px;
     cursor: pointer;
-} */
+}

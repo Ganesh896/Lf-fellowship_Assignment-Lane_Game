@@ -1,8 +1,8 @@
-import { canvas, ctx } from "./canvas/game-window";
+import { ctx } from "./canvas/game-window";
 import { generateRandomNumber } from "./utils/random-number";
+import { canvas } from "./html-elements";
 
 export interface IEnemy {
-    // img: HTMLImageElement;
     xpose: number;
     ypose: number;
     width: number;
@@ -16,7 +16,6 @@ export interface IEnemy {
 }
 
 export default class Enemy implements IEnemy {
-    // img: HTMLImageElement;
     xpose: number;
     ypose: number;
     width: number;
@@ -29,10 +28,10 @@ export default class Enemy implements IEnemy {
         this.width = width;
         this.height = height;
         this.xpose = xpose;
-        this.ypose = generateRandomNumber(-400, 0);
+        this.ypose = generateRandomNumber(-400, 0); //keeping car at random pos on y-axis
         this.dx = 5;
         this.dy = dy;
-        this.passedPlayer = false;
+        this.passedPlayer = false; //to check if player passed this car or not to update score, initially not passed so false
     }
 
     draw(): void {
@@ -41,10 +40,10 @@ export default class Enemy implements IEnemy {
         ctx.drawImage(img, this.xpose, this.ypose, this.width, this.height);
     }
 
-    updatePosition(lane: number): void {
+    updatePosition(lane: number, restart = false): void {
         this.ypose += this.dy;
 
-        if (this.ypose > canvas.height) {
+        if (this.ypose > canvas.height || restart) {
             this.ypose = generateRandomNumber(-400, 0);
             this.xpose = lane;
             this.passedPlayer = false;

@@ -1,6 +1,6 @@
 import { DIMENSIONS } from "../constants/Constants";
+import { canvas } from "../html-elements";
 
-export const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 export const ctx = canvas.getContext("2d")!;
 
 canvas.width = DIMENSIONS.CANVAS__WIDHT;

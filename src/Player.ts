@@ -1,7 +1,7 @@
-import { canvas, ctx } from "./canvas/game-window";
+import { ctx } from "./canvas/game-window";
+import { canvas } from "./html-elements";
 
 export interface IPlayer {
-    // img: HTMLImageElement;
     xpose: number;
     ypose: number;
     width: number;
@@ -14,7 +14,6 @@ export interface IPlayer {
 }
 
 export default class Player implements IPlayer {
-    // img: HTMLImageElement;
     xpose: number;
     ypose: number;
     width: number;
@@ -32,23 +31,26 @@ export default class Player implements IPlayer {
     draw(): void {
         const img = new Image();
         img.src = "./images/player1.png";
-        ctx.drawImage(img, this.xpose, this.ypose, this.width, this.height);
+        ctx.drawImage(img, this.xpose, this.ypose, this.width, this.height); //initally player at this pos
     }
 
     updatePosition(right: boolean, left: boolean): void {
         if (right) {
-            this.xpose += this.dx;
+            this.xpose += this.dx; //if pressed right arrow
         } else if (left) {
-            this.xpose -= this.dx;
+            this.xpose -= this.dx; //if pressed left arrow
         }
 
-        if (this.xpose < 210) {
-            this.xpose = 210;
+        // keeping car inside left boundry of the road/canvas window
+        if (this.xpose < 235) {
+            this.xpose = 235;
         }
 
-        if (this.xpose > canvas.width - 100) {
-            this.xpose = canvas.width - 100;
+        // keeping car inside right boundry of the road/canvas window
+        if (this.xpose > canvas.width - 85) {
+            this.xpose = canvas.width - 85;
         }
+        
         this.draw();
     }
 }
