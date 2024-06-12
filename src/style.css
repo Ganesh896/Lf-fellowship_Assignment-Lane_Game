@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #canvas {
     display: none;
 }
@@ -13,7 +21,7 @@
     width: 800px;
     height: 690px;
     background: #222;
-    margin-left: 200px;
+    /* margin-left: 200px; */
     color: #fff;
     align-items: center;
     justify-content: center;
@@ -24,7 +32,7 @@
     width: 800px;
     height: 690px;
     background: #222;
-    margin-left: 200px;
+    /* margin-left: 200px; */
     color: #fff;
     display: flex;
     align-items: center;

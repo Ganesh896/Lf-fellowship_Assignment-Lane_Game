@@ -8,7 +8,7 @@ import detectCollision from "./utils/detectCollision";
 import { generateRandomNumber } from "./utils/random-number";
 import restartGame from "./utils/restart-game";
 
-let highScore = 0;
+let highScore = Number(localStorage.getItem("highScore")) || 0;
 let score = 0;
 
 ctx.fillStyle = "#000";
@@ -81,9 +81,9 @@ function animate() {
     const leftLane = generateRandomNumber(235, 370);
     const middleLane = generateRandomNumber(canvas.width - 365, canvas.width - 265);
     const rightLane = generateRandomNumber(canvas.width - 195, canvas.width - 85);
-    lanes.push(leftLane);
-    lanes.push(middleLane);
-    lanes.push(rightLane);
+    lanes[0] = leftLane;
+    lanes[1] = middleLane;
+    lanes[2] = rightLane;
 
     // Redraw the fixed background elements
     ctx.fillStyle = "#000";
@@ -131,6 +131,7 @@ function animate() {
         if (detectCollision(player1, enemys[i])) {
             if (highScore < score) {
                 highScore = score;
+                localStorage.setItem("highScore", "" + highScore);
             }
             canvas.style.display = "none";
             gameOverWindow.style.display = "flex";
