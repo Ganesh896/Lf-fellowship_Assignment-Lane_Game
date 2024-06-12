@@ -1,4 +1,3 @@
-import { DIMENSIONS } from "./constants/Constants";
 import { canvas, ctx } from "./canvas/game-window";
 
 export interface IPlayer {
