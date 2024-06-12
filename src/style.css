@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* #canvas {
+    display: none;
+}
+
+.gameover__window {
+    display: none;
+    width: 800px;
+    height: 690px;
+    background: #222;
+    margin-left: 200px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.start__window {
+    width: 800px;
+    height: 690px;
+    background: #222;
+    margin-left: 200px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.instructions {
+    margin: 20px 0;
+    list-style: none;
+}
+
+.instructions li {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+button {
+    padding: 20px;
+    width: 200px;
+    font-size: 20px;
+    cursor: pointer;
+} */
