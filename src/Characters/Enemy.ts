@@ -1,6 +1,6 @@
-import { ctx } from "./canvas/game-window";
-import { generateRandomNumber } from "./utils/random-number";
-import { canvas } from "./html-elements";
+import { ctx } from "../canvas/game-window";
+import generateRandomNumber from "../utils/random-number";
+import { canvas } from "../html-elements";
 
 export interface IEnemy {
     xpose: number;

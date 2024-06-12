@@ -1,12 +1,11 @@
 import Rectangle from "./shapes/Rectangle";
 import { ctx } from "./canvas/game-window";
 import { canvas, startButton, reStartButton, startWindow, highScoreEle, currrentScoreEle, gameOverWindow } from "./html-elements";
-import Player from "./Player";
-import Enemy from "./Enemy";
+import Player from "./Characters/Player";
+import Enemy from "./Characters/Enemy";
 import { PLAYER__YPOSE } from "./constants/Constants";
-import detectCollision from "./utils/detectCollision";
-import { generateRandomNumber } from "./utils/random-number";
-import restartGame from "./utils/restart-game";
+import { detectCollision, restartGame } from "./helper";
+import generateRandomNumber from "./utils/random-number";
 
 let highScore = Number(localStorage.getItem("highScore")) || 0;
 let score = 0;
@@ -19,7 +18,7 @@ const player1 = new Player((canvas.width + 120) / 2, PLAYER__YPOSE, 50, 80);
 const rectangles: Rectangle[] = [];
 const enemys: Enemy[] = [];
 
-// Create and store rectangles
+// Create and store white rectangles
 for (let i = 0; i < 5; i++) {
     rectangles.push(new Rectangle((canvas.width + 200) / 3, 145 * i + 5, 15, 100));
     rectangles.push(new Rectangle((canvas.width + 200) / 2, 145 * i + 5, 15, 100));

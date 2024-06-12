@@ -1,5 +1,5 @@
-import { ctx } from "./canvas/game-window";
-import { canvas } from "./html-elements";
+import { ctx } from "../canvas/game-window";
+import { canvas } from "../html-elements";
 
 export interface IPlayer {
     xpose: number;
@@ -50,7 +50,7 @@ export default class Player implements IPlayer {
         if (this.xpose > canvas.width - 85) {
             this.xpose = canvas.width - 85;
         }
-        
+
         this.draw();
     }
 }
