@@ -32,22 +32,17 @@ for (let i = 0; i < 5; i++) {
 const lanes: number[] = [];
 
 for (let i = 0; i < 4; i++) {
-    let xpos: number;
-    let ypose: number;
+    let xpos = 0;
     if (i == 0) {
         xpos = canvas.width - 365;
-        ypose = 145 * i;
     } else if (i == 1) {
         xpos = canvas.width - 265;
-        ypose = 145 * i;
     } else if (i == 2) {
         xpos = canvas.width - 195;
-        ypose = 145 * i;
     } else if (i == 3) {
         xpos = 370;
-        ypose = 0;
     }
-    enemys.push(new Enemy(xpos, ypose, 50, 90, 6));
+    enemys.push(new Enemy(xpos, 50, 90, 6));
 }
 
 let moveRight = false;

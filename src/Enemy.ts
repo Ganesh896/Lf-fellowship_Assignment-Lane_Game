@@ -25,7 +25,7 @@ export default class Enemy implements IEnemy {
     dy: number;
     passedPlayer: boolean;
 
-    constructor(xpose: number, ypose: number, width: number, height: number, dy: number) {
+    constructor(xpose: number, width: number, height: number, dy: number) {
         this.width = width;
         this.height = height;
         this.xpose = xpose;
